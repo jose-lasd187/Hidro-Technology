@@ -36,6 +36,7 @@
 
     main {
       max-width: 1000px;
+      width: 100%;
       margin: 40px auto;
       padding: 0 20px;
     }
@@ -47,7 +48,7 @@
       margin-bottom: 40px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
-       border-bottom: 4px solid black; /* orilla solo abajo */
+      border-bottom: 4px solid black;
     }
 
     section:hover {
@@ -83,6 +84,13 @@
       margin-bottom: 15px;
     }
 
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .footer-social img {
       width: 35px;
       height: 35px;
@@ -100,6 +108,18 @@
       margin-top: 20px;
     }
 
+    /* Media Queries */
+
+    @media (max-width: 1024px) {
+      main {
+        padding: 0 15px;
+      }
+
+      section {
+        padding: 25px;
+      }
+    }
+
     @media (max-width: 768px) {
       .titulo {
         font-size: 2rem;
@@ -107,11 +127,14 @@
 
       h2 {
         font-size: 1.5rem;
-        
       }
 
       p {
         font-size: 1rem;
+      }
+
+      section {
+        padding: 20px;
       }
 
       .footer-social img {
@@ -120,17 +143,43 @@
         margin: 0 8px;
       }
     }
+
+    @media (max-width: 480px) {
+      .titulo {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      .footer-content h3 {
+        font-size: 1.3rem;
+      }
+
+      .footer-social img {
+        width: 24px;
+        height: 24px;
+        margin: 0 6px;
+      }
+    }
   </style>
 </head>
 <body>
-
 
   <header>
     <a href="index.html" style="text-decoration: none;">
       <h1 class="titulo">HIDRO TECHNOLOGY</h1>
     </a>
   </header>
-
 
   <main>
     <section>
@@ -162,12 +211,11 @@
         </a>
       </div>
 
-      <p class="footer-copy">&copy; <span id="year"></span> Hidro Technology. .</p>
+      <p class="footer-copy">&copy; <span id="year"></span> Hidro Technology.</p>
     </div>
   </footer>
 
   <script>
-   
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
